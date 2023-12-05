@@ -121,6 +121,76 @@
 
 В TypeScript: Включение объектов одного класса в другой через свойства или параметры конструктора.
 
+**Конструктор** - это специальный метод класса, который вызывается при создании нового объекта этого класса. В TypeScript конструктор обозначается ключевым словом constructor. Конструктор позволяет инициализировать свойства объекта и выполнять другие необходимые действия при его создании.
+```typescript
+class MyClass {
+    private _myProperty: number;
+
+    constructor(value: number) {
+        this._myProperty = value;
+    }
+}
+
+const myInstance = new MyClass(42);
+
+```
+
+Модификаторы доступа: private, public и this:
+
+private (приватный):
+
+Описание: Переменные или методы с модификатором private доступны только внутри того класса, в котором они определены. Они недоступны извне класса.
+
+Пример:
+
+```typescript
+class MyClass {
+    private _myPrivateProperty: number;
+
+    constructor(value: number) {
+        this._myPrivateProperty = value;
+    }
+}
+```
+
+Public (публичный):
+
+Описание: Переменные или методы с модификатором public доступны из любого места, в том числе и извне класса.
+
+Пример:  
+
+```typescript
+class MyClass {
+    public myPublicProperty: number;
+
+    constructor(value: number) {
+        this.myPublicProperty = value;
+    }
+}
+```
+
+This (this):
+
+Описание: this в TypeScript представляет текущий экземпляр объекта (инстанса) класса. Используется для доступа к членам объекта внутри его методов.
+
+Пример:
+
+```typescript
+class MyClass {
+    private _myProperty: number;
+
+    constructor(value: number) {
+        this._myProperty = value;
+    }
+
+    public displayMyProperty(): void {
+        console.log(this._myProperty);
+    }
+}
+```
+
+В данном примере this._myProperty обращается к приватному свойству объекта, а метод displayMyProperty использует this для обращения к членам текущего объекта.
+
 #### Тип T
 В TypeScript, **T** часто используется как общепринятое имя для обозначения типа (Type). Это просто обозначение типовой переменной, и вы можете использовать любое другое имя вместо T, но общепринято использовать именно T. Она часто используется в контексте обобщений (generics).
 
